@@ -6,11 +6,11 @@ public class ListSpread {
     //Необходимо реализовать метод разворота связного списка (двухсвязного или односвязного на выбор).
     private Node head;
 
-    public void LinkedList() {
+   /* public void LinkedList() {
         head = null;
-    }
+    }*/
 
-    public class Node {
+    public static class Node {
         public int data;
         public Node next;
 
