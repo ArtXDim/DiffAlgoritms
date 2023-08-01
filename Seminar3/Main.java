@@ -2,7 +2,7 @@ package Seminar3;
 
 public class Main {
     public static void main(String[] args) {
-        LinkedList List = new LinkedList();
+        LinkedList list = new LinkedList();
 
         list.add(1);
         list.add(2);
