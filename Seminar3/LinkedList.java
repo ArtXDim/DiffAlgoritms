@@ -2,15 +2,15 @@
 
 package Seminar3;
 
-public class ListSpread {
+public class LinkedList {
     //Необходимо реализовать метод разворота связного списка (двухсвязного или односвязного на выбор).
     private Node head;
 
-   /* public void LinkedList() {
+    public LinkedList() {
         head = null;
-    }*/
+    }
 
-    public static class Node {
+    public class Node {
         public int data;
         public Node next;
 
@@ -36,18 +36,18 @@ public class ListSpread {
 
     public void remove(int data) {
         Node currentNode = head;
-        Node previosNode = null;
+        Node previousNode = null;
 
         while (currentNode.next != null) {
             if (currentNode.data == data) {
                 if (currentNode == head) {
                     head = currentNode.next;
                 } else {
-                    previosNode.next = currentNode.next;
+                    previousNode.next = currentNode.next;
                 }
             }
 
-            previosNode = currentNode;
+            previousNode = currentNode;
             currentNode = currentNode.next;
         }
     }
@@ -66,15 +66,15 @@ public class ListSpread {
 
     public void revers() {
         Node currentNode = head;
-        Node previosNode = null;
+        Node previousNode = null;
 
         while (currentNode != null) {
             Node next = currentNode.next;
-            currentNode.next = previosNode;
+            currentNode.next = previousNode;
 
-            previosNode = currentNode;
+            previousNode = currentNode;
             currentNode = next;
         }
-        head = previosNode;
+        head = previousNode;
     }
 }
