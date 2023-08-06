@@ -21,43 +21,43 @@ public class HashMap<K, V> implements Iterable<HashMap.Entity> {
         int bucketIndex = 0; // Индекс текущего бакета
         int nodeIndex = 0;  // Индекс текущей ноды в бакете
         Entity entity;
-
+        
         @Override
         public boolean hasNext() {
-
+            
             // Перебираем все бакеты с того, на котором остановились
             for (int i = bucketIndex; i < buckets.length; i ++) {
-
+                
                 Bucket<K, V> bucket = buckets[i];
 
                 if (bucket != null) {
-
+                    
                     // Перебираем связный список в бакете с той ноды, на которой остановились
                     Bucket.Node node = bucket.head;
-
+                    
                     int j = 0;
-
+                    
                     while (node != null) {
-
+                        
                         if (j < nodeIndex) {
                             j ++;
                             node = node.next;
                             continue;
                         }
-
+                        
                         entity = new Entity();
                         entity.key = (K)node.value.key;
                         entity.value = (V)node.value.value;
                         nodeIndex ++;
                         return true;
                     }
-
+                    
                     nodeIndex = 0;
-                }
-
+                }                
+                                
                 bucketIndex ++;
             }
-
+            
             // Все элементы перебраны, возвращаем false
             return false;
         }

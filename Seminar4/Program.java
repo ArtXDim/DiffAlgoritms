@@ -1,4 +1,4 @@
-
+package Seminar4;
 public class Program {
 
     public static void main(String[] args) {
@@ -18,9 +18,9 @@ public class Program {
 
 
         //res = hashMap.get("+79005554436");
-
+        
         //hashMap.remove("+79005554438");
-
+        
         for (HashMap.Entity element : hashMap) {
             System.out.println(element.key + " - " + element.value);
         }
